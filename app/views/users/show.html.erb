@@ -4,3 +4,5 @@
 <p>Votre prénom : <%= current_user.prenom %></p>
 <p>Votre nom : <%= current_user.nom %></p>
 <p>Votre email : <%= current_user.email %></p>
+<br />
+<%= link_to "Editer", edit_user_path, class: "btn btn-success" %>
