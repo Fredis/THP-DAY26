@@ -17,6 +17,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if !logged_in?
+      flash[:danger] = "CONNECTE-TOI CONNARD" 
+      redirect_to login_path
+    end 
   end 
 
   def index 

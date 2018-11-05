@@ -97,7 +97,7 @@ class SessionsTest < ApplicationSystemTestCase
     end
 
   end
-
+  
   #Test pour vérifier l'accès à la page de profil de l'utilisateur et des informations présentes
   test "show_profile_page_for_the_good_user" do
 
@@ -108,13 +108,18 @@ class SessionsTest < ApplicationSystemTestCase
 		click_on 'Login'
 		click_on 'Mon Profil'
 
-		assert_text current_user.id
-		assert_text current_user.prenom
-		assert_text current_user.nom
-		assert_text current_user.email
+		assert_text "980190962"
+		assert_text "Bob"
+		assert_text "Lennon"
+		assert_text "fred@fred.com"
+
 
 	end	
 
+	#Test pour véifier qu'un user non connecté ne puisse accéder à la page de profil d'un utilisateur
+  test "show_profile_page_with_a_visitor" do
+  	visit '/users/980190962'
+	end	
 
 
 end
