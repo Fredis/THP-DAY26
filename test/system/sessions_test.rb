@@ -24,10 +24,12 @@ class SessionsTest < ApplicationSystemTestCase
     fill_in "Confirmez votre mot de passe", with: "Coucou"
 
     click_on "S'inscrire"
+ 
     assert_link "Voici le lien pour la page du club"
-    click_on "Log out"
+
 
   end
+
 
   #Test de la page d'inscription avec des champs vides et qui renvoie des erreurs
   test "view_signup_with_blank_fields" do
@@ -42,6 +44,7 @@ class SessionsTest < ApplicationSystemTestCase
     assert_no_link "Voici le lien pour la page du club"
 
   end
+
 
   #Test de la page d'inscription avec l'email doublon et qui renvoie des erreurs
   test "view_signup_with_existing_email" do
@@ -111,6 +114,7 @@ class SessionsTest < ApplicationSystemTestCase
 		assert_text current_user.email
 
 	end	
+
 
 
 end

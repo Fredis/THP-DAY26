@@ -8,7 +8,7 @@
         <li><%= link_to "Home", '/' %></li>
         <% if logged_in? %>
         <li><%= link_to "Log out", logout_path, method: :delete %></li>
-        <li><%= link_to "Mon Profil", user_path[@current_user.id] %></li>
+        <li><%= link_to "Mon Profil", current_user %></li>
         <li><%= link_to "Le club", users_path %></li>
 
      
