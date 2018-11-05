@@ -20,6 +20,10 @@ class UsersController < ApplicationController
   end 
 
   def index 
+    if !logged_in?
+      flash[:danger] = "CONNECTE-TOI CONNARD" 
+      redirect_to login_path
+    end 
     @users = User.all 
   end 
 

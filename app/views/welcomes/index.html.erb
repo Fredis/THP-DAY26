@@ -2,10 +2,11 @@
 
 <% if logged_in? %>
 
-<p> Voici le lien pour la page du club: </p>
+
+<p> <%= link_to "Voici le lien pour la page du club", users_path %> </p>
 
 <% else %>
 
-<p> Connectez-vous! </p>
+<p> <%= link_to "Connectez-vous!", login_path %> </p>
 
 <% end %>
