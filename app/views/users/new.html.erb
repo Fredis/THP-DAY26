@@ -2,6 +2,7 @@
 <p>Voici le formulaire d'inscription :</p>
 
 <%= form_for @user do |f| %>
+  <%= render 'shared/error_messages' %>
 	<div class="form-group">
 		<%= f.label :prenom, "Prénom" %>
 		<%= f.text_field :prenom, placeholder: "Votre prénom...", class: "form-control", style: "width: 30%;" %>
