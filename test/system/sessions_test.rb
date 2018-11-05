@@ -1,4 +1,5 @@
 require "application_system_test_case"
+include BCrypt
 
 class SessionsTest < ApplicationSystemTestCase
   # test "visiting the index" do
@@ -6,7 +7,6 @@ class SessionsTest < ApplicationSystemTestCase
   #
   #   assert_selector "h1", text: "Sessions"
   # end
-
 
   #Test qui montre que le user peut se connecter et qui vérifier que le lien de la homepage est existant
   test "view_homepage" do
@@ -94,5 +94,23 @@ class SessionsTest < ApplicationSystemTestCase
     end
 
   end
+
+  #Test pour vérifier l'accès à la page de profil de l'utilisateur et des informations présentes
+  test "show_profile_page_for_the_good_user" do
+
+  	visit '/'
+		click_on 'Connexion'  	
+    fill_in "Email", with: "fred@fred.com"
+    fill_in "Mot de passe", with: "hahahaha"
+		click_on 'Login'
+		click_on 'Mon Profil'
+
+		assert_text current_user.id
+		assert_text current_user.prenom
+		assert_text current_user.nom
+		assert_text current_user.email
+
+	end	
+
 
 end

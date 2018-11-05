@@ -4,6 +4,7 @@ one:
   prenom: Bob
   nom: Lennon
   email: fred@fred.com
+  password_digest: $2a$10$UHuNkTYp2.3ch.5S.05Cxep.SG3S0QWTC.BTtk1sYiZTp.02qa/fa
 
 two:
   prenom: MyString
