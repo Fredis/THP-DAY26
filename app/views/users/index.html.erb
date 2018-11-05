@@ -1,0 +1,12 @@
+<h1> Voici la liste des membres: </h1>
+
+<% @users.each do |user| %>
+  <label>Utilisateur n°</label>
+  <%= user.id %> <br/>
+  <label>Prénom:</label> 
+  <%= user.prenom %> <br/>
+  <label>Nom:</label>
+  <%= user.nom %><br/>
+  <label>Email:</label>
+  <%= user.email %><br/>
+<% end %>
