@@ -8,6 +8,7 @@ class SessionsTest < ApplicationSystemTestCase
   #   assert_selector "h1", text: "Sessions"
   # end
 
+=begin
   #Test qui montre que le user peut se connecter et qui vérifier que le lien de la homepage est existant
   test "view_homepage" do
   
@@ -130,6 +131,18 @@ class SessionsTest < ApplicationSystemTestCase
     fill_in "Mot de passe", with: "hahahaha"
 		click_on 'Login'
   	visit '/users/298486374'
+	end	
+=end
+	#Test pour vérifier le bouton d'édition
+  test "profile_page_edition_button" do
+  	
+  	visit '/'
+		click_on 'Connexion'  	
+    fill_in "Email", with: "fred@fred.com"
+    fill_in "Mot de passe", with: "hahahaha"
+		click_on 'Login'
+		click_on 'Editer'
+  	sleep(5)
 	end	
 
 
