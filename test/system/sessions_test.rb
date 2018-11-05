@@ -97,7 +97,7 @@ class SessionsTest < ApplicationSystemTestCase
     end
 
   end
-  
+
   #Test pour vérifier l'accès à la page de profil de l'utilisateur et des informations présentes
   test "show_profile_page_for_the_good_user" do
 
@@ -116,9 +116,20 @@ class SessionsTest < ApplicationSystemTestCase
 
 	end	
 
-	#Test pour véifier qu'un user non connecté ne puisse accéder à la page de profil d'un utilisateur
+	#Test pour vérifier qu'un user non connecté ne puisse accéder à la page de profil d'un utilisateur
   test "show_profile_page_with_a_visitor" do
   	visit '/users/980190962'
+	end	
+
+	#Test pour vérifier que l'utilisateur ne peux voir que son contenu de page de profil
+  test "show_profile_page_with_another_connected_user" do
+  	
+  	visit '/'
+		click_on 'Connexion'  	
+    fill_in "Email", with: "fred@fred.com"
+    fill_in "Mot de passe", with: "hahahaha"
+		click_on 'Login'
+  	visit '/users/298486374'
 	end	
 
 
