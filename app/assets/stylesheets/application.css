@@ -14,16 +14,9 @@
  *= require_self
  */
 
-navbar
-{
-	width: 20%;
-	height: 150px;
-	float: left;
-	padding-top: 25px;
-	padding-left: 10px;
-	padding-right: 10px;
+body {
+  margin-top: 50px !important;
 }
-
 .content
 {
 	width: 78%;

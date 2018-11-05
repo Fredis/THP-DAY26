@@ -1,0 +1,25 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+  <div class="navbar-header">
+  <a class="navbar-brand" href="/">Secret App</a>
+    	</div>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", '/' %></li>
+        <% if logged_in? %>
+        <li><%= link_to "Users", '#' %></li>
+        <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        <li><%= link_to "Le club", '#' %></li>
+
+     
+        
+      <% else %>
+        <li><%= link_to "Se connecter", login_path %></li>     
+        <li><%= link_to "S'inscrire", signup_path %></li>   
+    
+      <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
