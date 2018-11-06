@@ -18,14 +18,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if !logged_in?
-      flash[:danger] = "CONNECTE-TOI CONNARD" 
+      flash[:danger] = "CONNECTE-TOI MON GENTIL MEMBRE" 
       redirect_to login_path
     end 
   end 
 
   def index 
     if !logged_in?
-      flash[:danger] = "CONNECTE-TOI CONNARD" 
+      flash[:danger] = "CONNECTE-TOI MON GENTIL MEMBRE" 
       redirect_to login_path
     end 
     @users = User.all 
@@ -45,7 +45,6 @@ class UsersController < ApplicationController
   def update
 
     @user = User.find(current_user.id)
-    puts '/////'
     @user.update(user_params)
     redirect_to users_path
 

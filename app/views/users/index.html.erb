@@ -1,15 +1,16 @@
 <h1> Voici la liste des membres: </h1>
+<br />
+<br />
+<table class="table table-hover">
+  <tbody>
+  	<% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.id %></th>
+      <td><%= user.prenom %></td>
+      <td><%= user.nom %></td>
+      <td><%= user.email %></td>
+    </tr>
+		<% end %>
+  </tbody>
+</table>
 
-
-
-
-<% @users.each do |user| %>
-  <label>Utilisateur n°</label>
-  <%= user.id %> <br/>
-  <label>Prénom:</label> 
-  <%= user.prenom %> <br/>
-  <label>Nom:</label>
-  <%= user.nom %><br/>
-  <label>Email:</label>
-  <%= user.email %><br/>
-<% end %>

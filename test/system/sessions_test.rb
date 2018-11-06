@@ -141,7 +141,6 @@ class SessionsTest < ApplicationSystemTestCase
     fill_in "Mot de passe", with: "hahahaha"
 		click_on 'Login'
 		click_on 'Editer'
-  	sleep(5)
 	end	
 
 

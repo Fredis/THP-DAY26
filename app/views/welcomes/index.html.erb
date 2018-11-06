@@ -1,11 +1,10 @@
-<h1>Bienvenue Visiteur!</h1>
-
 <% if logged_in? %>
-
+<h1>Bienvenue <%= current_user.prenom %>!</h1>
 
 <p> <%= link_to "Voici le lien pour la page du club", users_path %> </p>
 
 <% else %>
+<h1>Bienvenue Visiteur !</h1>
 
 <p> <%= link_to "Connectez-vous!", login_path %> </p>
 
